@@ -47,8 +47,8 @@
 :root[data-theme="midnight"] .tags span{color:#b9beb5}
 :root[data-theme="midnight"] .project:hover{background:var(--surface)}
 :root[data-theme="midnight"] .project-dialog{background:#292e2a;color:var(--ink)}
-:root[data-theme="midnight"] .topbar nav a{color:var(--muted)}
-:root[data-theme="midnight"] .topbar nav{background:var(--paper)}
+:root[data-theme="midnight"] .topbar nav a{color:var(--ink)}
+:root[data-theme="midnight"] .topbar nav{background:transparent}
 :root[data-theme="midnight"] .status-dot{background:#45b96b;box-shadow:0 0 0 3px #45b96b30}
 :root[data-theme="midnight"] .statement h2 em{color:var(--accent)}
 :root[data-theme="midnight"] .statement .eyebrow{color:var(--accent)}
