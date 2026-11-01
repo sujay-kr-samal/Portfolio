@@ -1,0 +1,82 @@
+/* RETRO ANALOG LAYER: load after style.css. Uses the existing theme variables, so all 6 themes still work. */
+:root{--glow:color-mix(in srgb,var(--accent) 55%,transparent);--amber:#ffb347;--rgb:-2px 0 rgba(255,0,60,.4),2px 0 rgba(0,200,255,.4)}
+
+/* CRT overlay: scanlines, vignette, flicker, rolling band, channel-change static */
+.crt{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 58%,rgba(0,0,0,.26));
+  animation:flick 4s steps(1,end) infinite}
+.crt::after{content:"";position:absolute;left:0;right:0;top:-16vh;height:16vh;background:linear-gradient(180deg,transparent,rgba(255,255,255,.07),transparent);animation:roll 7s linear infinite}
+.crt::before{content:"";position:absolute;inset:0;opacity:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.35) 0 2px,rgba(0,0,0,.5) 2px 5px)}
+@keyframes flick{0%,100%{opacity:1}30%{opacity:.93}31%{opacity:1}72%{opacity:.95}73%{opacity:1}}
+@keyframes roll{to{transform:translateY(130vh)}}
+@keyframes blink{50%{opacity:0}}
+
+/* Boot sequence */
+html.booting body>*:not(.boot){visibility:hidden;animation:unhide 0s 6s forwards}
+@keyframes unhide{to{visibility:visible}}
+.boot{position:fixed;inset:0;z-index:100;background:#0b0c0a;color:var(--amber);display:grid;place-items:center;font:24px/1.25 "VT323",monospace}
+.boot::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.35) 0 1px,transparent 1px 3px)}
+.boot-inner{width:min(560px,86vw);text-shadow:0 0 8px rgba(255,179,71,.7);animation:crtOn .6s steps(7,end) both}
+.boot pre{margin:0 0 14px;min-height:6.4em;font:inherit;white-space:pre-wrap}
+.boot-bar{height:16px;border:2px solid var(--amber);padding:2px}
+.boot-bar i{display:block;height:100%;width:0;background:var(--amber);transition:width .2s steps(6)}
+.boot small{display:block;margin-top:14px;font-size:16px;opacity:.6;animation:blink 1s steps(1) infinite}
+.boot.off{animation:crtOff .56s steps(8,end) forwards}
+@keyframes crtOn{0%{transform:scale(1,.01);filter:brightness(5);opacity:.5}60%{transform:scale(1,1.04);filter:brightness(2)}100%{transform:none;filter:none;opacity:1}}
+@keyframes crtOff{0%{transform:scale(1);filter:brightness(1)}45%{transform:scale(1,.012);filter:brightness(4)}80%{transform:scale(.01,.012);filter:brightness(6)}100%{transform:scale(0);opacity:0;visibility:hidden}}
+
+/* Headlines: constant RGB drift plus an occasional VHS tear; blinking terminal cursor */
+.hero h1,.case-hero h1{animation:drift 3.4s steps(1,end) infinite;text-shadow:var(--rgb),0 0 22px var(--glow)}
+@keyframes drift{
+  0%,100%{text-shadow:-1px 0 rgba(255,0,60,.35),1px 0 rgba(0,200,255,.35),0 0 22px var(--glow);transform:none}
+  40%{text-shadow:var(--rgb),0 0 30px var(--glow)}
+  70%{text-shadow:2px 0 rgba(255,0,60,.4),-2px 0 rgba(0,200,255,.4),0 0 18px var(--glow)}
+  92%{transform:translateX(-8px) skewX(-5deg);text-shadow:-7px 0 rgba(255,0,60,.5),7px 0 rgba(0,200,255,.5)}
+  93.5%{transform:translateX(6px) skewX(3deg)}
+  95%{transform:none}}
+.hero h1 em::after{content:"";display:inline-block;width:.45em;height:.74em;margin-left:.14em;background:var(--accent);vertical-align:-.02em;box-shadow:0 0 14px var(--glow);animation:blink 1s steps(1) infinite}
+
+/* Tune-in entrance replaces the soft fade-up */
+.reveal{transform:none;transition:none}
+.reveal.visible{animation:tuneIn .8s steps(9,end) both}
+@keyframes tuneIn{
+  0%{opacity:0;transform:translateX(-20px) skewX(8deg);filter:blur(5px) brightness(2)}
+  20%{opacity:.8;transform:translateX(14px) skewX(-6deg)}
+  38%{opacity:.15;transform:translateX(-6px)}
+  55%{opacity:1;transform:translateX(4px) skewX(2deg);filter:blur(1px)}
+  100%{opacity:1;transform:none;filter:none}}
+
+/* Header, hero details */
+.orbit-mark b{display:inline-block;animation:spin8 5s steps(8,end) infinite}
+@keyframes spin8{to{transform:rotate(360deg)}}
+.vu{display:flex;align-items:flex-end;gap:3px;height:22px;margin-top:4px}
+.vu i{width:6px;height:100%;transform-origin:bottom;background:linear-gradient(0deg,#45b96b 0 60%,#e8b73a 60% 85%,#d8452f 85%);animation:vu calc(.6s + var(--i)*.08s) steps(6,end) infinite alternate;animation-delay:calc(var(--i)*-.13s)}
+@keyframes vu{from{transform:scaleY(.12)}to{transform:scaleY(1)}}
+
+/* Projects */
+.project{overflow:hidden}
+.project::after{content:"";position:absolute;top:0;bottom:0;left:-30%;width:30%;opacity:0;pointer-events:none;background:linear-gradient(90deg,transparent,var(--glow),transparent)}
+.project:hover::after{animation:sweep .9s linear}
+@keyframes sweep{0%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(480%)}}
+.project:hover h3{animation:drift .6s steps(1,end) infinite}
+.project-status.live::before{content:"";display:inline-block;width:8px;height:8px;margin-right:8px;border-radius:50%;background:#e0392b;box-shadow:0 0 8px #e0392b;animation:blink 1s steps(1) infinite}
+
+/* Statement, contact, dialog, case pages */
+.statement:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 2px,transparent 2px 6px);animation:crawl 1.2s linear infinite}
+@keyframes crawl{to{transform:translateY(6px)}}
+.statement:after{animation:spin8 24s steps(48,end) infinite}
+.statement h2{text-shadow:0 0 24px var(--glow)}
+.statement h2 em{animation:blink 3s steps(1) infinite}
+.contact-button{animation:nudge 2.4s steps(1,end) infinite}
+@keyframes nudge{50%{box-shadow:9px 9px 0 var(--ink)}}
+.project-dialog[open]{animation:crtOn .4s steps(6,end)}
+.project-dialog::backdrop{background:repeating-linear-gradient(0deg,rgba(0,0,0,.55) 0 2px,rgba(0,0,0,.7) 2px 4px);backdrop-filter:none}
+.cover-frame{position:relative;overflow:hidden;border:3px solid var(--ink)}
+.cover-frame::after{content:"";position:absolute;left:0;right:0;top:-20%;height:20%;background:linear-gradient(180deg,transparent,var(--glow),transparent);animation:roll 4s linear infinite}
+.cover-symbol{text-shadow:0 0 30px var(--glow);animation:bob 3.6s steps(12,end) infinite}
+@keyframes bob{50%{transform:translateY(-14px) rotate(6deg)}}
+
+@media(prefers-reduced-motion:reduce){
+  .crt,.crt::after,.hero h1,.case-hero h1,.hero h1 em::after,.reveal.visible,.orbit-mark b,.vu i,.project:hover::after,.project:hover h3,.project-status.live::before,.statement:before,.statement:after,.statement h2 em,.contact-button,.project-dialog[open],.cover-frame::after,.cover-symbol{animation:none!important}
+  .vu i{transform:scaleY(.6)}
+}

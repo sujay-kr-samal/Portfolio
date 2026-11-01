@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eeeae1">
+  <meta name="description" content="Sujay Kumar Samal — developer, builder, and curious mind. Explore selected projects and experiments.">
+  <title>Sujay Kumar Samal — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="retro.css">
+  <script>try{if(!sessionStorage.getItem("sks-booted")&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("booting")}catch(e){}</script>
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="wordmark" href="#home" aria-label="Sujay home"><span class="wordmark-name">Sujay</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Selected work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="theme-picker">
+        <button class="theme-trigger mono" type="button" aria-expanded="false" aria-controls="theme-options">
+          <span class="theme-swatch" aria-hidden="true"></span><span class="theme-current">BEIGE</span><span class="theme-chevron">⌄</span>
+        </button>
+        <div class="theme-options" id="theme-options" role="group" aria-label="Choose website theme">
+          <button type="button" data-theme="beige" aria-pressed="true"><i class="swatch beige"></i>Beige</button>
+          <button type="button" data-theme="wine" aria-pressed="false"><i class="swatch wine"></i>Wine</button>
+          <button type="button" data-theme="forest" aria-pressed="false"><i class="swatch forest"></i>Forest</button>
+          <button type="button" data-theme="midnight" aria-pressed="false"><i class="swatch midnight"></i>Midnight</button>
+          <button type="button" data-theme="slate" aria-pressed="false"><i class="swatch slate"></i>Slate</button>
+          <button type="button" data-theme="plum" aria-pressed="false"><i class="swatch plum"></i>Plum</button>
+        </div>
+      </div>
+      <a class="availability" href="mailto:hello@sujay.dev"><span class="status-dot"></span> Open to opportunities</a>
+    </div>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-meta mono reveal"><span>PORTFOLIO / 2026</span><span>INDEPENDENT DEVELOPER</span></div>
+      <div class="hero-copy">
+        <p class="eyebrow reveal">HELLO, I'M SUJAY KUMAR SAMAL</p>
+        <h1 class="reveal">I build things<br><em>that make sense.</em></h1>
+        <div class="hero-bottom reveal">
+          <p class="intro">A computer science student exploring software, systems, and the space between a curious idea and a working product.</p>
+          <a class="round-link" href="#work" aria-label="Explore selected work"><span>↓</span></a>
+        </div>
+        <div class="hero-stats reveal" aria-label="Quick stats about Sujay">
+          <div><span class="mono">04</span><small>Active experiments</small></div>
+          <div><span class="mono">C / C++ / WEB / AI</span><small>Core stack</small></div>
+          <div><span class="mono">2026</span><small>Building in public</small></div>
+        </div>
+      </div>
+      <div class="hero-rule"></div>
+      <div class="hero-foot mono reveal"><span>BASED IN INDIA</span><span>BUILDING WITH C · C++ · WEB · AI</span></div>
+      <div class="orbit-mark" aria-hidden="true"><span>DESIGN</span><b>✳</b><span>ENGINEER</span></div>
+    </section>
+
+    <section class="work section-wrap" id="work">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">01 / THE WORK</p><h2>Selected <em>projects.</em></h2></div>
+        <p class="section-note">A collection of experiments, tools, and systems<br>built to learn by making.</p>
+      </div>
+      <div class="project-list">
+
+        <a class="project reveal" href="project.html?id=browser" data-project="browser">
+          <div class="project-index mono">01</div>
+          <div class="project-main">
+            <div class="project-kicker mono">SYSTEMS · C</div>
+            <h3>BROWSER FROM SCRATCH <span class="project-mark">↗</span></h3>
+            <p>A custom browser built from the ground up in C, focused on parsing, rendering, and fundamental web engine internals.</p>
+            <div class="tags">
+              <span>C</span>
+              <span>HTML</span>
+              <span>RENDERING</span>
+            </div>
+          </div>
+          <div class="project-side">
+            <span class="project-status">IN DEVELOPMENT</span>
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+
+        <a class="project reveal" href="project.html?id=os" data-project="os">
+          <div class="project-index mono">02</div>
+          <div class="project-main">
+            <div class="project-kicker mono">OPERATING SYSTEMS · C</div>
+            <h3>OS FROM SCRATCH <span class="project-mark">↗</span></h3>
+            <p>An operating system project exploring kernels, process control, memory management, and boot-time fundamentals.</p>
+            <div class="tags">
+              <span>C</span>
+              <span>KERNEL</span>
+              <span>OS</span>
+            </div>
+          </div>
+          <div class="project-side">
+            <span class="project-status">EXPERIMENT</span>
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+
+        <a class="project reveal" href="project.html?id=game" data-project="game">
+          <div class="project-index mono">03</div>
+          <div class="project-main">
+            <div class="project-kicker mono">GAME ENGINE · PHYSICS · C</div>
+            <h3>RETRO PHYSICS GAME <span class="project-mark">↗</span></h3>
+            <p>A falling-block style game built in C, with collision, gravity, and physics simulated from scratch.</p>
+            <div class="tags">
+              <span>C</span>
+              <span>PHYSICS</span>
+              <span>GAMEPLAY</span>
+            </div>
+          </div>
+          <div class="project-side">
+            <span class="project-status">PLAYABLE</span>
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+
+        <a class="project reveal" href="project.html?id=ar" data-project="ar">
+          <div class="project-index mono">04</div>
+          <div class="project-main">
+            <div class="project-kicker mono">IMMERSIVE SYSTEMS · C</div>
+            <h3>AUGMENTED REALITY <span class="project-mark">↗</span></h3>
+            <p>An augmented reality system built from scratch in C to explore scene logic, spatial tracking, and real-time rendering.</p>
+            <div class="tags">
+              <span>C</span>
+              <span>GRAPHICS</span>
+              <span>TRACKING</span>
+            </div>
+          </div>
+          <div class="project-side">
+            <span class="project-status">IN DEVELOPMENT</span>
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+
+      </div>
+      <p class="work-foot mono">MORE EXPERIMENTS IN THE WORKSHOP <span>✳</span></p>
+    </section>
+
+    <section class="statement">
+      <div class="section-wrap statement-inner reveal">
+        <p class="eyebrow">A NOTE ON HOW I WORK</p>
+        <h2>Curiosity is the<br>starting point. <em>Making</em><br>is the method.</h2>
+        <p class="statement-caption">I like understanding how things work — then building my own version, one small piece at a time.</p>
+      </div>
+    </section>
+
+    <section class="about section-wrap" id="about">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">02 / THE PERSON</p><h2>A little <em>context.</em></h2></div>
+      </div>
+      <div class="about-grid">
+        <p class="about-lead reveal">I’m a computer science student with a builder’s mindset and a wide curiosity for technology.</p>
+        <div class="about-detail reveal">
+          <p>My interests move between low-level systems, programming languages, web development, AI, and connected hardware. I enjoy projects that teach me something fundamental — especially when I can turn that learning into something tangible.</p>
+          <div class="facts">
+            <div><span class="mono">CURRENTLY</span><b>B.Tech · Computer Science</b></div>
+            <div><span class="mono">INTERESTS</span><b>Systems / AI / Open Source</b></div>
+            <div><span class="mono">APPROACH</span><b>Learn by building</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-wrap" id="contact">
+      <p class="eyebrow reveal">03 / GET IN TOUCH</p>
+      <div class="contact-row reveal">
+        <h2>Have an idea?<br><em>Let’s talk.</em></h2>
+        <a class="contact-button" href="mailto:hello@sujay.dev">Write me an email <span>↗</span></a>
+      </div>
+      <div class="contact-bottom mono reveal"><span class="availability-copy" aria-label="OPEN TO COLLABORATIONS & OPPORTUNITIES"><span class="typing-text" aria-hidden="true">OPEN TO COLLABORATIONS &amp; OPPORTUNITIES</span></span><span>INDIA · UTC +05:30</span></div>
+    </section>
+  </main>
+
+  <footer class="footer section-wrap">
+    <a class="wordmark" href="#home">Sujay</a>
+    <span class="mono">DESIGNED & BUILT BY SUJAY · 2026</span>
+    <a class="back-top mono" href="#home">BACK TO TOP ↑</a>
+  </footer>
+
+  <dialog class="project-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" aria-label="Close project details">×</button>
+    <p class="eyebrow mono" id="dialog-kicker">PROJECT NOTES</p>
+    <h2 id="dialog-title">Project</h2>
+    <p id="dialog-description"></p>
+    <div class="dialog-footer mono"><span id="dialog-stack"></span><span>PROJECT NOTES / 2026</span></div>
+    <div class="dialog-actions"><a id="dialog-link" href="project.html?id=ar">Read the full case study</a></div>
+  </dialog>
+  <script src="script.js"></script>
+  <script src="retro.js"></script>
+</body>
+</html>

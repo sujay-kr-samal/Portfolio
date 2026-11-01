@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project | Sujay</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="retro.css">
+  <script src="script.js" defer></script>
+  <script src="project.js" defer></script>
+  <script src="retro.js" defer></script>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="wordmark" href="index.html"><span class="wordmark-name">Sujay</span></a>
+
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <div class="header-actions">
+    <div class="theme-picker">
+      <button class="theme-trigger mono" type="button" aria-expanded="false" aria-controls="theme-options">
+        <span class="theme-swatch" aria-hidden="true"></span><span class="theme-current">BEIGE</span><span class="theme-chevron">⌄</span>
+      </button>
+      <div class="theme-options" id="theme-options" role="group" aria-label="Choose website theme">
+        <button type="button" data-theme="beige" aria-pressed="true"><i class="swatch beige"></i>Beige</button>
+        <button type="button" data-theme="wine" aria-pressed="false"><i class="swatch wine"></i>Wine</button>
+        <button type="button" data-theme="forest" aria-pressed="false"><i class="swatch forest"></i>Forest</button>
+        <button type="button" data-theme="midnight" aria-pressed="false"><i class="swatch midnight"></i>Midnight</button>
+        <button type="button" data-theme="slate" aria-pressed="false"><i class="swatch slate"></i>Slate</button>
+        <button type="button" data-theme="plum" aria-pressed="false"><i class="swatch plum"></i>Plum</button>
+      </div>
+    </div>
+    <a href="index.html" class="mono">← BACK HOME</a>
+  </div>
+</header>
+
+<main class="case-study section-wrap">
+
+  <a href="index.html#work" class="back-link mono">
+    ← BACK TO PROJECTS
+  </a>
+
+  <section class="case-hero">
+    <p class="eyebrow" id="case-kicker"></p>
+
+    <h1 id="case-title"></h1>
+
+    <p id="case-summary" class="case-summary"></p>
+
+    <div class="case-meta mono">
+      <span id="case-stack"></span>
+      <span id="case-status"></span>
+    </div>
+  </section>
+
+  <section class="case-cover">
+    <div class="cover-frame">
+      <span class="mono">PROJECT ARCHIVE</span>
+      <div id="cover-symbol" class="cover-symbol">✳</div>
+      <span class="mono">AN EXPERIMENT BY SUJAY</span>
+    </div>
+  </section>
+
+  <div class="case-content">
+
+    <section>
+      <p class="eyebrow">01 / OVERVIEW</p>
+      <h2 id="case-overview-title"></h2>
+      <p id="case-overview"></p>
+    </section>
+
+    <section>
+      <p class="eyebrow">02 / DEVELOPMENT</p>
+      <h2>The process.</h2>
+      <ul id="case-process"></ul>
+    </section>
+
+    <section>
+      <p class="eyebrow">03 / LEARNINGS</p>
+      <h2>What I learned.</h2>
+      <p id="case-learning"></p>
+    </section>
+
+    <section>
+      <p class="eyebrow">04 / LINKS</p>
+      <h2>Explore the build.</h2>
+      <a id="github-link" target="_blank" rel="noopener noreferrer">
+        GitHub Repository ↗
+      </a>
+    </section>
+
+  </div>
+
+</main>
+
+<footer class="footer section-wrap">
+  <a class="wordmark" href="index.html">Sujay</a>
+  <span class="mono">DESIGNED BY SUJAY · 2026</span>
+  <a href="index.html#work">ALL PROJECTS ↑</a>
+</footer>
+
+</body>
+</html>
