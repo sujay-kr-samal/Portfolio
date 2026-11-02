@@ -80,3 +80,13 @@ html.booting body>*:not(.boot){visibility:hidden;animation:unhide 0s 6s forwards
   .crt,.crt::after,.hero h1,.case-hero h1,.hero h1 em::after,.reveal.visible,.orbit-mark b,.vu i,.project:hover::after,.project:hover h3,.project-status.live::before,.statement:before,.statement:after,.statement h2 em,.contact-button,.project-dialog[open],.cover-frame::after,.cover-symbol{animation:none!important}
   .vu i{transform:scaleY(.6)}
 }
+/* FIXES (appended) */
+/* Hero headline: .reveal.visible was overriding the drift animation, so run the tune-in first, then drift */
+.hero h1.reveal.visible{animation:tuneIn .8s steps(9,end) backwards,drift 3.4s steps(1,end) .8s infinite}
+/* Don't freeze the end state of the tune-in; it was blocking other styles such as the project hover lift */
+.reveal.visible{animation-fill-mode:backwards}
+.project.reveal.visible:hover{transform:translate(-5px,-5px)}
+/* Keyboard focus */
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+/* Hold the entrance animations until the boot screen has finished (keep this last) */
+html.booting .reveal.visible{animation-play-state:paused}
